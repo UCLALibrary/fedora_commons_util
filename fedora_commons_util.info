@@ -1,0 +1,8 @@
+name = Fedora Commons Utilities
+description = "Fedora Commons Utilities provides helper functions to address common actions in the Fedora repository"
+dependencies[] = libraries
+dependencies[] = islandora
+package = Islandora
+version = 7.x-dev
+core = 7.x
+php = 5.3

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ *
+ * Install hooks for this module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function fedora_commons_util_requirements() {
+  $requirements = array();
+  return $requirements;
+}
