@@ -93,12 +93,10 @@ class FedoraCommonsUtil {
       }
     }
   }
-  
-  
-    /**
+
+  /**
    * 
-   *  Given list of pids delete the datastream from these 
-   *  Fedora objects
+   *  Given list of pids delete the object associated with each pid 
    *
    * 
    * @param type $datastream_id
@@ -212,27 +210,29 @@ class FedoraCommonsUtil {
 
     return $pid_numbers;
   }
-  
-    /**
+
+  /**
    * 
    *  Given source Datastream ID, destination DS ID and list of pids set the 
    *  ID of source datastream to ID given as destination for pid list
    *
    * 
-   * @param type $datastream_id
-   *  The datastream id of the dsid you wish to delete from the objects
+   * @param type $src_datastream_id
+   *  The datastream id of the source datastream you wish to copy FROM
+   * 
+   *  @param type $dest_datastream_id
+   *  The datastream id of the destination datastream you wish to copy TO
    * 
    * @param type $pid_numbers
-   *  An array containing list of pid numbers to remove datastream from
+   *  An array containing list of pid numbers to apply the rename ds method to
    * 
    * 
    * @return type 
    * 
    */
   function rename_datastream_by_pid_list($src_datastream_id, $dest_datastream_id, $pid_entries) {
-
+    
   }
-  
 
   /**
    * 
