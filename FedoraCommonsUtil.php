@@ -93,6 +93,43 @@ class FedoraCommonsUtil {
       }
     }
   }
+  
+  
+    /**
+   * 
+   *  Given list of pids delete the datastream from these 
+   *  Fedora objects
+   *
+   * 
+   * @param type $datastream_id
+   *  The datastream id of the dsid you wish to delete from the objects
+   * 
+   * @param type $pid_numbers
+   *  An array containing list of pid numbers to remove datastream from
+   * 
+   * 
+   * @return type 
+   * 
+   */
+  function delete_object_by_pid_list($pid_entries) {
+
+    $delete_count = 0;
+
+    foreach ($pid_entries as $pid_entry) {
+      $fedora_object = $this->get_islandora_object($pid_entry);
+
+      if ($fedora_object) {
+        $result_code = $fedora_object->delete();
+        $result_text = 'Failure';
+
+        if ($result_code == 1) {
+          $result_text = 'Success';
+          $delete_count++;
+        }
+        $this->log_message("Deleted {$pid_entry} - Result : {$result_text}", 'ok');
+      }
+    }
+  }
 
   /**
    * 
@@ -175,6 +212,27 @@ class FedoraCommonsUtil {
 
     return $pid_numbers;
   }
+  
+    /**
+   * 
+   *  Given source Datastream ID, destination DS ID and list of pids set the 
+   *  ID of source datastream to ID given as destination for pid list
+   *
+   * 
+   * @param type $datastream_id
+   *  The datastream id of the dsid you wish to delete from the objects
+   * 
+   * @param type $pid_numbers
+   *  An array containing list of pid numbers to remove datastream from
+   * 
+   * 
+   * @return type 
+   * 
+   */
+  function rename_datastream_by_pid_list($src_datastream_id, $dest_datastream_id, $pid_entries) {
+
+  }
+  
 
   /**
    * 
